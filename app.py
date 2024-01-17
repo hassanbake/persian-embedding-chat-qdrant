@@ -1,8 +1,8 @@
-import environments
-from dotenv import load_dotenv
-
-from langchain_community.vectorstores import Qdrant
-from langchain.text_splitter import CharacterTextSplitter
+import os
+import qdrant_client
+from langchain.vectorstores import Qdrant
+from langchain_openai import OpenAIEmbeddings
+from langchain.callbacks import get_openai_callback
 
 def read_text_from_file(file_path):
     text = ""
